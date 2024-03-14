@@ -1,5 +1,7 @@
+'use client'
 import Link from "next/link";
-import "./nav.css";
+import "./navHome.css";
+import {ArrowRightIcon}  from '@chakra-ui/icons';
 
 export default function nav() {
   return (
@@ -17,7 +19,9 @@ export default function nav() {
               <Link href="/contact">Contact</Link>
             </li>
             <li className="selected">
-              <Link className="selected" href="/about">About</Link>
+              <Link className="selected" href="/about">About
+              </Link>
+              <ArrowRightIcon/>
             </li>
           </ul>
         </div>

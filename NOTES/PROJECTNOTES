@@ -3,7 +3,7 @@
 Chakru isnt working properly, moved to Material UI 
 
 {** When the background color is set to black on home page, 
-once going back home using the logo icon and then going back directing back to another page, 
+once going back home using the logo icon and then going back to another page, 
 that black background color follows **}
 
 

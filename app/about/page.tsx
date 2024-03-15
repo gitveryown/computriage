@@ -1,14 +1,14 @@
 'use client'
 import React from "react";
-import style from '../style/page.module.css'
-import NavPage from "../component/Navbar/navPages";
+import NavBar from "../component/Navbar/pageNavBar";
 
 
 export default function Page() {
     return (
-      <body className={style.bodyStyle}>
-        <NavPage></NavPage>
+      <div>
+        {/* Will transfer Nav page component into layout page  */}
+        <NavBar></NavBar>
         <h1>This Is The About Page!</h1>
-      </body>
+      </div>
     );
   }

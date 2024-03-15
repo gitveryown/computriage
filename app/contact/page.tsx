@@ -1,4 +1,4 @@
-import NavPage from "../component/Navbar/navPages";
+import NavPage from "../component/Navbar/pageNavBar";
 
 export default function Page() {
   return (

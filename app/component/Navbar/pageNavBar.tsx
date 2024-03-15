@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Link from "next/link";
 
-const pages = ["services", "about", "contact"];
+export const pages = ["services", "about", "contact"];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavPage() {
@@ -42,10 +42,15 @@ function NavPage() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor:'#ebe8e2'}}>
+    <AppBar position="static" sx={{ backgroundColor: "#ebe8e2", color:'black' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Link href={"/"}>
+            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+              {" "}
+            </AdbIcon>{" "}
+          </Link>
+
           <Typography
             variant="h5"
             noWrap
@@ -93,13 +98,16 @@ function NavPage() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography  textAlign="center"><Link href={`/${page}`}>{page}</Link></Typography>
+                  <Typography sx={{color:'#000'}} textAlign="center">
+                    <Link href={`/${page}`}>{page} </Link>
+                  </Typography>
                 </MenuItem>
               ))}
-              
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <Link href={"/"}>
+            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          </Link>
           <Typography
             variant="h5"
             noWrap
@@ -112,7 +120,7 @@ function NavPage() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "black",
               textDecoration: "none",
             }}
           ></Typography>
@@ -121,7 +129,7 @@ function NavPage() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "inherit", display: "block" }}
               >
                 <Link href={`/${page}`}>{page}</Link>
               </Button>
@@ -157,8 +165,6 @@ function NavPage() {
               ))}
             </Menu> 
           </Box> */}
-
-          
         </Toolbar>
       </Container>
     </AppBar>

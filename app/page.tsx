@@ -1,14 +1,13 @@
 import Link from "next/link";
-import Nav from "./component/Navbar/nav";
+import Navbar from "./component/Navbar/homeNavBar";
+import './page.css'
 
-import About from "./about/page"
 
 export default function Home() {
   return (
-    <main>
-      <header>
-        <Nav></Nav>
-      </header>
-    </main>
+    <div>
+      <Navbar/>
+      <h1>This is the home page!</h1>
+    </div>
   );
 }

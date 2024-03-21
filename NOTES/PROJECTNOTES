@@ -1,0 +1,17 @@
+[Bugs]
+
+Chakru isnt working properly, moved to Material UI 
+
+{** When the background color is set to black on home page, 
+once going back home using the logo icon and then going back to another page, 
+that black background color follows **}
+
+
+[Task] 
+
+Create a css module to be used for all pages link that has off-white bkground color .
+Remove border bottom from navbar
+Fix NavBar for home, search mui for another nav header option.
+Begin Footer, will be applied on every page except home. 
+
+

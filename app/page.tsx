@@ -1,15 +1,19 @@
 import Link from "next/link";
-import "./home.css";
+import "./page.css";
+import Image from "next/image";
+import dots from '../public/dots.png'
+import AnimatedBackground from "./component/Animation/animation";
+
 
 export default function Home() {
   return (
-    <main>
-      <header>
-        <div className="headerTop">
+    <main className="mainContainer">
+      <header className="header">
+        <div>
           <Link href="/">
             LOGO
           </Link>
-          <nav>
+          <nav className="nav">
             <button className="notSelected">
               <Link href="/about">
                 About
@@ -28,6 +32,22 @@ export default function Home() {
           </nav>
         </div>
       </header>
+      {/* <div className="backgroundImg">
+      <Image 
+      src={dots}
+      alt="computriage background"
+      sizes="100vw"
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
+
+      >
+
+      </Image>
+      </div>
+    */}
+      
     </main>
   );
 }

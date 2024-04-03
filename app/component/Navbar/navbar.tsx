@@ -31,7 +31,7 @@ const NavLink = (props: Props) => {
   return (
     <Box
       as="a"
-      px={1}
+      px={2}
       py={1}
       rounded={'md'}
       _hover={{
@@ -48,7 +48,7 @@ export default function Nav() {
 
   return (
     <>
-      <Box px={3}>
+      <Box px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

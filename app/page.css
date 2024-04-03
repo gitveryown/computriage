@@ -1,24 +1,24 @@
-main {
-  background-color: gray;
+.mainContainer {
   height: 100vh;
   width: 100vw;
 }
 
-header {
+.header {
   width: 100%;
   padding-top: 10px;
-}
-
-.headerTop {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: .8rem;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
 }
 
- nav {
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
   padding-inline: 2rem;
   border: 1px solid white;
   border-radius: 0.7rem;

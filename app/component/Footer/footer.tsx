@@ -12,10 +12,11 @@ import {
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import Link from "next/link";
+import { log } from "console";
 
 const Logo = (props: any) => {
   return (
@@ -46,6 +47,7 @@ const SocialButton = ({
   label: string;
   href: string;
 }) => {
+
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
@@ -78,6 +80,18 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function LargeWithNewsletter() {
+
+  const [email, setEmail] = useState('')
+
+ 
+
+  function handleBtn(e:any){
+    setEmail(e.target.value) 
+    ;
+  }
+
+  
+
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -132,6 +146,10 @@ export default function LargeWithNewsletter() {
             <ListHeader>Stay up to date</ListHeader>
             <Stack direction={"row"}>
               <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleBtn}
                 placeholder={"Your email address"}
                 bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
                 border={0}
@@ -139,8 +157,8 @@ export default function LargeWithNewsletter() {
                   bg: "whiteAlpha.300",
                 }}
               />
-              <a href="mailto:wrightw2055@gmail.com">
-                <IconButton
+              <a href={`mailto:${encodeURIComponent(email)}`}>
+                <IconButton      
                   bg={useColorModeValue("green.400", "green.800")}
                   color={useColorModeValue("white", "gray.800")}
                   _hover={{

@@ -1,13 +1,33 @@
 import Link from "next/link";
-import Navbar from "./component/Navbar/homeNavBar";
-import './page.css'
-
+import "./home.css";
 
 export default function Home() {
   return (
-    <div>
-      <Navbar/>
-      <h1>This is the home page!</h1>
-    </div>
+    <main>
+      <header>
+        <div className="headerTop">
+          <Link href="/">
+            LOGO
+          </Link>
+          <nav>
+            <button className="notSelected">
+              <Link href="/about">
+                About
+              </Link>
+            </button>
+            <button className="notSelected">
+              <Link href="/contact">
+                Contact
+              </Link>
+            </button>
+            <button className="selected">
+              <Link href="/services">
+                Services
+              </Link>
+            </button>
+          </nav>
+        </div>
+      </header>
+    </main>
   );
 }

@@ -61,7 +61,7 @@ export default function Nav() {
             <Box><Link className='logo' href='/'>Logo</Link></Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) =>  ( 
-                <Link href={`/${link.toLocaleLowerCase()}`}>{link}</Link> 
+                <Link href={`/${link.toLocaleLowerCase(link)}`}>{link}</Link> 
               ))}
             </HStack>
           </HStack>

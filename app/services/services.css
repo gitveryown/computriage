@@ -20,7 +20,13 @@
 .photo-grid {
   grid-area: 2 / 2 / 3/ 5;
   z-index: 1;
+  border-radius: 20px;
 }
+
+.service-photo{
+  border-radius: 20px;
+}
+
 
 .blurb-n-button {
 grid-area: 2 / 5 / 2 / 7;

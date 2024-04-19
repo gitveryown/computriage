@@ -18,7 +18,9 @@ export default function page() {
         <div className="photo-grid">
             <Image
               alt="stockphoto"
-                src={cyber}/>
+                src={cyber}
+                className="service-photo"
+                />
         </div>
         <div className="blurb-n-button">
           <div className="blurb1">
@@ -58,7 +60,7 @@ export default function page() {
             <Image
             alt=" placeholder"
             src={code}
-            className="photo"
+            className="service-photo"
             />
           
         </div>

@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,500;1,500&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.animationContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated {
+  animation: fadeIn 2s ease;
+}
+.animatedText {
+  animation: fadeIn 7s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.imageBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.contentContainer {
+  text-align: center;
+  height: 100vh;
+  background-color: #fff;
+}
+.text {
+  font-family: "Roboto mono", monospace;
+  font-weight: 500;
+  animation: fadeIn 12s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  font-size: 1rem;
+  z-index: 1;
+  min-width: fit-content;
+  text-align: center;
+}
+.title {
+  font-size: 4rem;
+}
+
+.logo {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  transform: scale(3.5);
+  margin-right: 20px;
+}
+
+.arrowContainer {
+  animation: fadeIn 30s ease;
+}
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20%;
+  scroll-behavior: smooth;
+}
+
+.arrows path {
+  scroll-behavior: smooth;
+  stroke: #ffffff;
+  fill: transparent;
+  stroke-width: 0.3rem;
+
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+}
+
+.contentLink {
+  scroll-behavior: smooth;
+}
+
+.contentTitleContainer {
+  position: relative;
+  width: 55%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contentTitle {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.header {
+  color: #86bbd8;
+  width: 100%;
+  padding: 10px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+  background-color: rgba(var(--color-background-rgb), 0.4);
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20000002;
+  position: fixed;
+  -webkit-backdrop-filter: blur(35px);
+  backdrop-filter: blur(35px);
+  border-radius: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 64px;
+  overflow: hidden;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notSelected {
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 10px;
+  text-decoration: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.notSelected::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.notSelected:hover::after {
+  width: 100%;
+  background: #86bbd8;
+}
+
+.secondContentContainer {
+  overflow-y: scroll;
+  height: 180svh;
+}
+
+.secondContent {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  margin-top: 2rem;
+}
+
+.secondImgContainer {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teamImg {
+  padding-bottom: 1rem;
+  border-radius: 2.5rem;
+  transform: scale(1.1);
+}
+
+.listContainerText {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  gap: 5rem;
+  height: 100vh;
+}
+
+.listItem {
+  font-size: 1.8rem;
+}
+
+.listp {
+  color:#a1a1a1;
+  font-style: normal;
+  width: 50%;
+}
+
+.listTitle {
+  font-weight: 900;
+}

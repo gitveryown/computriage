@@ -1,0 +1,123 @@
+.main-container {
+  background: rgb(238, 238, 238);
+  background: linear-gradient(
+    180deg,
+    rgba(238, 238, 238, 1) 0%,
+    rgba(204, 204, 204, 1) 50%,
+    rgba(163, 163, 163, 1) 100%
+  );
+  height: 1440px;
+  width: 1440px;
+}
+
+.main-grid {
+  display:grid;
+  grid-template-rows: 145px 145px 145px 145px;
+  grid-template-columns: 180px 180px 180px 180px 180px 180px 180px 180px;
+  grid-gap: 1.3em;
+}
+
+.photo-grid {
+  grid-area: 2 / 2 / 3/ 5;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.service-photo{
+  border-radius: 20px;
+}
+
+
+.blurb-n-button {
+grid-area: 2 / 5 / 2 / 7;
+}
+
+.para1 {
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+  text-align: justify;
+  
+}
+.para2 {
+  font-size: medium;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 10px;
+  text-align: justify;
+}
+.button-container{
+display: flex;
+align-content: center;
+justify-content: center;
+margin-top: 20px;
+}
+
+.button{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: grey; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+.service-container{
+ display: grid;
+ grid-template-columns: repeat(12, minmax(0,1fr));
+ grid-template-rows: 122px 122px 122px 122px 122PX ;
+ gap:.5rem;
+ max-width: 1440px;
+ max-height: 720px;
+}
+
+.hr{
+  color: black;
+}
+
+.vertical-line{
+  width: 5px;
+  height: 500px;
+  background-color: black;
+  grid-area: 2 / 3 / 5 / 2;
+ 
+}
+
+.left-info{
+  grid-area: 3 / 3 / 6 / 5;
+}
+
+.header-pg2{
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: -90px;
+  margin-bottom: 30px;
+  border-style: underline;
+}
+
+
+ul {
+  list-style: circle;
+  padding-left: 40px;
+  
+}
+
+li{
+  margin: 15px 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.photo {
+  display: grid;
+  grid-area: 2/ 7 / 6 / 11;
+  border-radius: 30px;
+}

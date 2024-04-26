@@ -15,7 +15,7 @@
   animation: fadeIn 2s ease;
 }
 .animatedText {
-  animation: fadeIn 7s ease;
+  animation: fadeIn 4s ease;
 }
 @keyframes fadeIn {
   from {
@@ -37,12 +37,7 @@
   z-index: -1;
 }
 
-.contentContainer {
-  text-align: center;
-  height: 100vh;
-  background-color: #fff;
-}
-.text {
+.titleContainerText{
   font-family: "Roboto mono", monospace;
   font-weight: 500;
   animation: fadeIn 12s ease;
@@ -50,14 +45,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #000000;
+  color: #fff;
   font-size: 1rem;
   z-index: 1;
   min-width: fit-content;
   text-align: center;
 }
+
 .title {
-  font-size: 4rem;
+  font-size: 4rem; 
 }
 
 .logo {
@@ -87,8 +83,8 @@
   fill: transparent;
   stroke-width: 0.3rem;
 
-  animation: arrow 2s infinite;
-  -webkit-animation: arrow 2s infinite;
+  animation: arrow 1s infinite;
+  -webkit-animation: arrow 1s infinite;
 }
 
 @keyframes arrow {
@@ -136,19 +132,27 @@
   -webkit-animation-delay: 0s;
 }
 
-.contentLink {
-  scroll-behavior: smooth;
+.contentContainer {
+  text-align: center;
+  height: 120vh;
+  background-color: #fff;
 }
 
-.contentTitleContainer {
-  position: relative;
-  width: 55%;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+.contentText{
+  font-size: 2.5rem;
+  margin-top: 12rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
+
+.spanText{
+  width: 50%;
+}
+
 
 .contentTitle {
+  color: #a1a1a1;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 500;
   font-size: 1.8rem;
@@ -159,6 +163,7 @@
   width: 100%;
   padding: 10px;
 }
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -178,6 +183,7 @@
   height: 64px;
   overflow: hidden;
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -209,12 +215,15 @@
 }
 
 .secondContentContainer {
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   height: 180svh;
 }
 
 .secondContent {
   display: grid;
+  flex: 1;
   gap: 8rem;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
@@ -228,6 +237,7 @@
 }
 
 .teamImg {
+  position: sticky;
   padding-bottom: 1rem;
   border-radius: 2.5rem;
   transform: scale(1.1);
@@ -252,4 +262,8 @@
 
 .listTitle {
   font-weight: 900;
+}
+
+.footer{
+  flex-shrink: 0;
 }

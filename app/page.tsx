@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import stock from "../public/stockbg.png";
+import stock from "../public/bg-img4.png";
 import team from "../public/team.svg";
 import logo from "../public/logo.svg";
 import "./page.css";

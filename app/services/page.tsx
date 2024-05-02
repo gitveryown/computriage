@@ -5,7 +5,7 @@ import Footer from "../component/Footer/footer";
 import Image from "next/image";
 import cyber from "../stockphoto1.png";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import code from "../../public/code.png"
+import code from "../../public/stockbg.png"
 
 
 

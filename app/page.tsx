@@ -7,7 +7,6 @@ import team from "../public/team.svg";
 import "./page.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { StopCircle } from "@mui/icons-material";
 import Footer from "./component/Footer/footer";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +21,7 @@ export default function Home() {
         scrub: 0.7,
         start: "top center",
         end: "bottom center",
-        markers: true,
+        markers: false,
       },
     })
     .from('.spanText', {
@@ -34,7 +33,7 @@ export default function Home() {
         width: "100%",
         duration: 1,
         ease: "none",
-        stagger: 0.15, // Adjust the stagger value as needed
+        stagger: 0.10, // Adjust the stagger value as needed
       });
   }, []);
 
@@ -47,14 +46,6 @@ export default function Home() {
     <>
       <div className="animationContainer" id="animationContainer">
         <div className="imageContainer animated">
-        <Image
-            className="imageBg"
-            src={stock}
-            alt="stock"
-            width={0}
-            height={0}
-          ></Image>
-          
           <div className="titleContainerText">
             <h2 className="title animatedText">COMPUTRIAGE</h2>
             <h3 className="subTitle">Where your data is secured</h3>

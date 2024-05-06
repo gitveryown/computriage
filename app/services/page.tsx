@@ -5,7 +5,6 @@ import Footer from "../component/Footer/footer";
 import Image from "next/image";
 import cyber from "../stockphoto1.png";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import code from "../../public/stockbg.png"
 
 
 
@@ -57,12 +56,7 @@ export default function page() {
             <li>Federal and State Goverment IT Consulting</li>
           </ul>
         </div>
-            <Image
-            alt=" placeholder"
-            src={code}
-            className="service-photo"
-            />
-          
+            
         </div>
     </div>
   );

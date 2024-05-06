@@ -1,51 +1,66 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import stock from "../public/bg-img4.png";
+import stock from '../public/cloud.jpeg'
 import team from "../public/team.svg";
-import logo from "../public/logo.svg";
 import "./page.css";
-import Backdrop from "@mui/material/Backdrop";
-import { makeStyles } from "@mui/material";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Footer from "./component/Footer/footer";
 
-// const [atHome, setAtHome] = useState('')
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  useEffect(() => {
+    gsap.set(".spanText", { width: 0 });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contentTextContainer",
+        scrub: 0.7,
+        start: "top center",
+        end: "bottom center",
+        markers: false,
+      },
+    })
+    .from('.spanText', {
+      color:'#a1a1a1'
+    })
+      .to(".spanText", {
+        color: 'black',
+        fontWeight: '500',
+        width: "100%",
+        duration: 1,
+        ease: "none",
+        stagger: 0.10, // Adjust the stagger value as needed
+      });
+  }, []);
+
+  const handleArrowClick = () => {
+    const contentContainer = document.getElementById("contentContainer");
+    contentContainer?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
       <div className="animationContainer" id="animationContainer">
         <div className="imageContainer animated">
-          <Image
-            className="imageBg"
-            src={stock}
-            alt="stock"
-            width={0}
-            height={0}
-          ></Image>
-
-          <div className="text">
+          <div className="titleContainerText">
             <h2 className="title animatedText">COMPUTRIAGE</h2>
             <h3 className="subTitle">Where your data is secured</h3>
           </div>
-          <div className="arrowContainer">
+          <div className="arrowContainer" onClick={handleArrowClick}>
             <svg className="arrows">
-              <Link href="#contentContainer">
-                <path className="a1" d="M0 0 L30 32 L60 0"></path>
-                <path className="a2" d="M0 20 L30 52 L60 20"></path>
-                <path className="a3" d="M0 40 L30 72 L60 40"></path>
-              </Link>
+              <path className="a1" d="M0 0 L30 32 L60 0"></path>
+              <path className="a2" d="M0 20 L30 52 L60 20"></path>
+              <path className="a3" d="M0 40 L30 72 L60 40"></path>
             </svg>
           </div>
         </div>
       </div>
 
-      <div
-        className="contentContainer"
-        id="contentContainer"
-        style={{ height: "100vh", scrollBehavior: "smooth" }}
-      >
+      <div className="contentContainer" id="contentContainer">
         <header className="header">
           <nav className="nav">
             <div className="logo"></div>
@@ -62,20 +77,440 @@ export default function Home() {
             </div>
           </nav>
         </header>
-        <div className="contentTitleContainer">
-          <h1 className="contentTitle">
-            CompuTriage is an Enterprise and Solutions Architect Provider,
-            Computer Forensics Crimes, Cyber Security, and IT Consulting company
-            that creates technological visions and its effective implementation
-            through IT strategy and take specific problems and propose a
-            solution to support the enterprise vision. CompuTriage is a minority
-            owned business that is NMSDC MBE Certified. Now a member of the High
-            Technology Crime Investigation Association (HTCIA){" "}
-          </h1>
+        <div className="contentTextContainer" id="contentTextContainer">
+          <div className="contentText">
+          <span className="spanText">C</span>
+          <span className="spanText">o</span>
+          <span className="spanText">m</span>
+          <span className="spanText">p</span>
+          <span className="spanText">u</span>
+          <span className="spanText">T</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">a</span>
+          <span className="spanText">g</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText">n</span>
+          <span className="spanText"> </span>
+          <span className="spanText">E</span>
+          <span className="spanText">n</span>
+          <span className="spanText">t</span>
+          <span className="spanText">e</span>
+          <span className="spanText">r</span>
+          <span className="spanText">p</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText">n</span>
+          <span className="spanText">d</span>
+          <span className="spanText"> </span>
+          <span className="spanText">S</span>
+          <span className="spanText">o</span>
+          <span className="spanText">l</span>
+          <span className="spanText">u</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">A</span>
+          <span className="spanText">r</span>
+          <span className="spanText">c</span>
+          <span className="spanText">h</span>
+          <span className="spanText">i</span>
+          <span className="spanText">t</span>
+          <span className="spanText">e</span>
+          <span className="spanText">c</span>
+          <span className="spanText">t</span>
+          <span className="spanText"> </span>
+          <span className="spanText">P</span>
+          <span className="spanText">r</span>
+          <span className="spanText">o</span>
+          <span className="spanText">v</span>
+          <span className="spanText">i</span>
+          <span className="spanText">d</span>
+          <span className="spanText">e</span>
+          <span className="spanText">r</span>
+          <span className="spanText">,</span>
+          <span className="spanText"> </span>
+          <span className="spanText">C</span>
+          <span className="spanText">o</span>
+          <span className="spanText">m</span>
+          <span className="spanText">p</span>
+          <span className="spanText">u</span>
+          <span className="spanText">T</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">a</span>
+          <span className="spanText">g</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText"> </span>
+          <span className="spanText">m</span>
+          <span className="spanText">i</span>
+          <span className="spanText">n</span>
+          <span className="spanText">o</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">t</span>
+          <span className="spanText">y</span>
+          <span className="spanText"> </span>
+          <span className="spanText">o</span>
+          <span className="spanText">w</span>
+          <span className="spanText">n</span>
+          <span className="spanText">e</span>
+          <span className="spanText">d</span>
+          <span className="spanText"> </span>
+          <span className="spanText">b</span>
+          <span className="spanText">u</span>
+          <span className="spanText">s</span>
+          <span className="spanText">i</span>
+          <span className="spanText">n</span>
+          <span className="spanText">e</span>
+          <span className="spanText">s</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">h</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText"> </span>
+          <span className="spanText">c</span>
+          <span className="spanText">r</span>
+          <span className="spanText">e</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText">e</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">e</span>
+          <span className="spanText">c</span>
+          <span className="spanText">h</span>
+          <span className="spanText">n</span>
+          <span className="spanText">o</span>
+          <span className="spanText">l</span>
+          <span className="spanText">o</span>
+          <span className="spanText">g</span>
+          <span className="spanText">i</span>
+          <span className="spanText">c</span>
+          <span className="spanText">a</span>
+          <span className="spanText">l</span>
+          <span className="spanText"> </span>
+          <span className="spanText">v</span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText">n</span>
+          <span className="spanText">d</span>
+          <span className="spanText"> </span>
+          <span className="spanText">i</span>
+          <span className="spanText">t</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">e</span>
+          <span className="spanText">f</span>
+          <span className="spanText">f</span>
+          <span className="spanText">e</span>
+          <span className="spanText">c</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">v</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">i</span>
+          <span className="spanText">m</span>
+          <span className="spanText">p</span>
+          <span className="spanText">l</span>
+          <span className="spanText">e</span>
+          <span className="spanText">m</span>
+          <span className="spanText">e</span>
+          <span className="spanText">n</span>
+          <span className="spanText">t</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">h</span>
+          <span className="spanText">r</span>
+          <span className="spanText">o</span>
+          <span className="spanText">u</span>
+          <span className="spanText">g</span>
+          <span className="spanText">h</span>
+          <span className="spanText"> </span>
+          <span className="spanText">I</span>
+          <span className="spanText">T</span>
+          <span className="spanText"> </span>
+          <span className="spanText">s</span>
+          <span className="spanText">t</span>
+          <span className="spanText">r</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText">e</span>
+          <span className="spanText">g</span>
+          <span className="spanText">y</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText">n</span>
+          <span className="spanText">d</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">a</span>
+          <span className="spanText">k</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">s</span>
+          <span className="spanText">p</span>
+          <span className="spanText">e</span>
+          <span className="spanText">c</span>
+          <span className="spanText">i</span>
+          <span className="spanText">f</span>
+          <span className="spanText">i</span>
+          <span className="spanText">c</span>
+          <span className="spanText"> </span>
+          <span className="spanText">p</span>
+          <span className="spanText">r</span>
+          <span className="spanText">o</span>
+          <span className="spanText">b</span>
+          <span className="spanText">l</span>
+          <span className="spanText">e</span>
+          <span className="spanText">m</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText">n</span>
+          <span className="spanText">d</span>
+          <span className="spanText"> </span>
+          <span className="spanText">p</span>
+          <span className="spanText">r</span>
+          <span className="spanText">o</span>
+          <span className="spanText">p</span>
+          <span className="spanText">o</span>
+          <span className="spanText">s</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText"> </span>
+          <span className="spanText">s</span>
+          <span className="spanText">o</span>
+          <span className="spanText">l</span>
+          <span className="spanText">u</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">o</span>
+          <span className="spanText"> </span>
+          <span className="spanText">s</span>
+          <span className="spanText">u</span>
+          <span className="spanText">p</span>
+          <span className="spanText">p</span>
+          <span className="spanText">o</span>
+          <span className="spanText">r</span>
+          <span className="spanText">t</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">h</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">e</span>
+          <span className="spanText">n</span>
+          <span className="spanText">t</span>
+          <span className="spanText">e</span>
+          <span className="spanText">r</span>
+          <span className="spanText">p</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">v</span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText">.</span>
+          <span className="spanText"> </span>
+          <span className="spanText">C</span>
+          <span className="spanText">o</span>
+          <span className="spanText">m</span>
+          <span className="spanText">p</span>
+          <span className="spanText">u</span>
+          <span className="spanText">T</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">a</span>
+          <span className="spanText">g</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText"> </span>
+          <span className="spanText">m</span>
+          <span className="spanText">i</span>
+          <span className="spanText">n</span>
+          <span className="spanText">o</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">t</span>
+          <span className="spanText">y</span>
+          <span className="spanText"> </span>
+          <span className="spanText">o</span>
+          <span className="spanText">w</span>
+          <span className="spanText">n</span>
+          <span className="spanText">e</span>
+          <span className="spanText">d</span>
+          <span className="spanText"> </span>
+          <span className="spanText">b</span>
+          <span className="spanText">u</span>
+          <span className="spanText">s</span>
+          <span className="spanText">i</span>
+          <span className="spanText">n</span>
+          <span className="spanText">e</span>
+          <span className="spanText">s</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">h</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText"> </span>
+          <span className="spanText">i</span>
+          <span className="spanText">s</span>
+          <span className="spanText"> </span>
+          <span className="spanText">N</span>
+          <span className="spanText">M</span>
+          <span className="spanText">S</span>
+          <span className="spanText">D</span>
+          <span className="spanText">C</span>
+          <span className="spanText"> </span>
+          <span className="spanText">M</span>
+          <span className="spanText">B</span>
+          <span className="spanText">E</span>
+          <span className="spanText"> </span>
+          <span className="spanText">C</span>
+          <span className="spanText">e</span>
+          <span className="spanText">r</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">f</span>
+          <span className="spanText">i</span>
+          <span className="spanText">e</span>
+          <span className="spanText">d</span>
+          <span className="spanText">.</span>
+          <span className="spanText"> </span>
+          <span className="spanText">N</span>
+          <span className="spanText">o</span>
+          <span className="spanText">w</span>
+          <span className="spanText"> </span>
+          <span className="spanText">a</span>
+          <span className="spanText"> </span>
+          <span className="spanText">m</span>
+          <span className="spanText">e</span>
+          <span className="spanText">m</span>
+          <span className="spanText">b</span>
+          <span className="spanText">e</span>
+          <span className="spanText">r</span>
+          <span className="spanText"> </span>
+          <span className="spanText">o</span>
+          <span className="spanText">f</span>
+          <span className="spanText"> </span>
+          <span className="spanText">t</span>
+          <span className="spanText">h</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">H</span>
+          <span className="spanText">i</span>
+          <span className="spanText">g</span>
+          <span className="spanText">h</span>
+          <span className="spanText"> </span>
+          <span className="spanText">T</span>
+          <span className="spanText">e</span>
+          <span className="spanText">c</span>
+          <span className="spanText">h</span>
+          <span className="spanText">n</span>
+          <span className="spanText">o</span>
+          <span className="spanText">l</span>
+          <span className="spanText">o</span>
+          <span className="spanText">g</span>
+          <span className="spanText">y</span>
+          <span className="spanText"> </span>
+          <span className="spanText">C</span>
+          <span className="spanText">r</span>
+          <span className="spanText">i</span>
+          <span className="spanText">m</span>
+          <span className="spanText">e</span>
+          <span className="spanText"> </span>
+          <span className="spanText">I</span>
+          <span className="spanText">n</span>
+          <span className="spanText">v</span>
+          <span className="spanText">e</span>
+          <span className="spanText">s</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">g</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText"> </span>
+          <span className="spanText">A</span>
+          <span className="spanText">s</span>
+          <span className="spanText">s</span>
+          <span className="spanText">o</span>
+          <span className="spanText">c</span>
+          <span className="spanText">i</span>
+          <span className="spanText">a</span>
+          <span className="spanText">t</span>
+          <span className="spanText">i</span>
+          <span className="spanText">o</span>
+          <span className="spanText">n</span>
+          <span className="spanText"> </span>
+          <span className="spanText"></span>
+          <span className="spanText">H</span>
+          <span className="spanText">T</span>
+          <span className="spanText">C</span>
+          <span className="spanText">I</span>
+          <span className="spanText">A</span>
+          <span className="spanText">.</span>{" "}
+          </div>
         </div>
+
+        {/* {Array.from("Computriage and Solutions.").map((char, index) => (
+              <span className="spanText" key={index} ref={(el) => (spanRefs.current[index] = el)}>
+                {char}
+              </span>
+            ))} */}
       </div>
 
-      <div className="secondContentContainer" >
+      <div className="secondContentContainer">
         <div className="secondContent">
           <div className="secondImgContainer">
             <Image
@@ -86,19 +521,18 @@ export default function Home() {
               height={0}
             ></Image>
           </div>
-          <ul className="listContainerText" >
+          <ul className="listContainerText">
             <li className="listItem">
               <h2 className="listTitle">Protection</h2>
               <p className="listp">
                 With our expansive global coverage, we rapidly locate your
-                vulnerabilies, wherever they've located, ensuring prompt and
+                vulnerabilities, wherever they're located, ensuring prompt and
                 direct resolution. No intermediaries, no delays—just results.
               </p>
             </li>
             <li className="listItem">
-              <h2 className="listTitle">Direct</h2>
+              <h2 className="listTitle">Benefits</h2>
               <p className="listp">
-                {" "}
                 Our no-middleman approach means no leakage maximizing your
                 income through our complete global licensing and administration
                 platform.
@@ -113,6 +547,9 @@ export default function Home() {
               </p>
             </li>
           </ul>
+        </div>
+        <div className="footer">
+        <Footer></Footer>
         </div>
       </div>
     </>

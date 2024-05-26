@@ -1,21 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,500;1,500&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .animationContainer {
-  display: flex;
-  flex-direction: column;
+  background-color: black;
+   display: flex; 
+  flex-direction: column; 
   height: 100vh;
 }
+
+
+
+.dot {
+  will-change: transform;
+  transform-origin: center;
+  transition: transform 1.0s ease-out;
+}
+
 
 .imageContainer {
   flex: 1;
   position: relative;
-  overflow: hidden;
 }
 
 .animated {
-  animation: fadeIn 2s ease;
+  animation: fadeIn 1s ease;
 }
 .animatedText {
-  animation: fadeIn 4s ease;
+  animation: fadeIn 2s ease;
 }
 @keyframes fadeIn {
   from {
@@ -26,7 +35,7 @@
   }
 }
 
-.imageBg {
+/* .imageBg {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,7 +44,7 @@
   object-fit: cover;
   object-position: center;
   z-index: -1;
-}
+} */
 
 .titleContainerText{
   font-family: "Roboto mono", monospace;
@@ -45,7 +54,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #000;
+  color: #fff;
   font-size: 1rem;
   z-index: 1;
   min-width: fit-content;
@@ -64,12 +73,13 @@
 }
 
 .arrowContainer {
-  animation: fadeIn 30s ease;
+  animation: fadeIn 15s ease;
 }
 
 .arrows {
+  cursor: pointer;
   width: 60px;
-  height: 72px;
+  height: 78px;
   position: absolute;
   left: 50%;
   margin-left: -30px;
@@ -79,7 +89,7 @@
 
 .arrows path {
   scroll-behavior: smooth;
-  stroke: #000000;
+  stroke: #fff;
   fill: transparent;
   stroke-width: 0.3rem;
 
@@ -139,6 +149,7 @@
 }
 
 .contentText{
+  width: 100%;
   font-size: 2.5rem;
   margin-top: 12rem;
   margin-left: auto;
@@ -214,12 +225,6 @@
   background: #86bbd8;
 }
 
-.secondContentContainer {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  height: 180svh;
-}
 
 .secondContent {
   display: grid;

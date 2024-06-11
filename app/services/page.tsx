@@ -1,6 +1,5 @@
 'use client'
 import "./services.css";
-import Nav from "../component/Navbar/navbar";
 import Footer from "../component/Footer/footer";
 import Image from "next/image";
 import cyber from "../stockphoto1.png";
@@ -12,7 +11,7 @@ export default function page() {
   return (
     <div className="main-container">
       <div className="main-section">
-      <Nav/>
+      
       <div className="main-grid">
         <div className="photo-grid">
             <Image

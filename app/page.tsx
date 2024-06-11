@@ -2,12 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import stock from '../public/cloud.jpeg'
+import stock from '../public/bg-img4.png'
 import team from "../public/team.svg";
 import "./page.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Footer from "./component/Footer/footer";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +22,7 @@ export default function Home() {
         scrub: 0.7,
         start: "top center",
         end: "bottom center",
-        markers: false,
+        markers: true,
       },
     })
     .from('.spanText', {
@@ -45,9 +46,13 @@ export default function Home() {
   return (
     <>
       <div className="animationContainer" id="animationContainer">
-        <div className="imageContainer animated">
+        <div className="videoContainer">
+          <video className="compvid" autoPlay muted loop>
+            <source src="/pointField.mp4" type="video/mp4" />
+           Your browers does not support this video tag.
+          </video>
           <div className="titleContainerText">
-            <h2 className="title animatedText">COMPUTRIAGE</h2>
+            <h2 className="animatedText">COMPUTRIAGE</h2>
             <h3 className="subTitle">Where your data is secured</h3>
           </div>
           <div className="arrowContainer" onClick={handleArrowClick}>

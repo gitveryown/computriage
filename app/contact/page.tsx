@@ -1,6 +1,6 @@
 "use client";
 
-import Nav from "../component/Navbar/navbar";
+
 import {
   Container,
   Flex,
@@ -32,7 +32,6 @@ import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
 export default function Page() {
   return (
     <div>
-      <Nav></Nav>
       <Container bg="" maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
           <Box

@@ -13,7 +13,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { ReactNode, useState } from "react";
-import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import Link from "next/link";
 import { log } from "console";
@@ -47,7 +53,6 @@ const SocialButton = ({
   label: string;
   href: string;
 }) => {
-
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
@@ -80,17 +85,11 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function LargeWithNewsletter() {
+  const [email, setEmail] = useState("");
 
-  const [email, setEmail] = useState('')
-
- 
-
-  function handleBtn(e:any){
-    setEmail(e.target.value) 
-    ;
+  function handleBtn(e: any) {
+    setEmail(e.target.value);
   }
-
-  
 
   return (
     <Box
@@ -106,15 +105,16 @@ export default function LargeWithNewsletter() {
             <Box>
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
-            <Text fontSize={"sm"}>
-              © 2024 Computriage. All rights reserved
-            </Text>
+            <Text fontSize={"sm"}>© 2024 Computriage. All rights reserved</Text>
             <Stack direction={"row"} spacing={6}>
-              <SocialButton label={"Twitter"} href={"#"}>
-                <FaTwitter />
+              <SocialButton
+                label={"Linkedin"}
+                href={"https://www.linkedin.com/company/computriage/"}
+              >
+                <FaLinkedin />
               </SocialButton>
-              <SocialButton label={"YouTube"} href={"#"}>
-                <FaYoutube />
+              <SocialButton label={"Facebook"} href={"#"}>
+                <FaFacebook />
               </SocialButton>
               <SocialButton label={"Instagram"} href={"#"}>
                 <FaInstagram />
@@ -158,7 +158,7 @@ export default function LargeWithNewsletter() {
                 }}
               />
               <a href={`mailto:${encodeURIComponent(email)}`}>
-                <IconButton      
+                <IconButton
                   bg={useColorModeValue("green.400", "green.800")}
                   color={useColorModeValue("white", "gray.800")}
                   _hover={{

@@ -5,7 +5,7 @@
   height: 100vh;
 }
 
-.imageContainer {
+.videoContainer {
   flex: 1;
   position: relative;
   overflow: hidden;
@@ -14,9 +14,7 @@
 .animated {
   animation: fadeIn 2s ease;
 }
-.animatedText {
-  animation: fadeIn 4s ease;
-}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -26,7 +24,7 @@
   }
 }
 
-.imageBg {
+.compvid {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,10 +32,10 @@
   height: 100vh;
   object-fit: cover;
   object-position: center;
-  z-index: -1;
+  z-index: 100;
 }
 
-.titleContainerText{
+.titleContainerText {
   font-family: "Roboto mono", monospace;
   font-weight: 500;
   animation: fadeIn 12s ease;
@@ -45,15 +43,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #000;
+  color: white;
   font-size: 1rem;
-  z-index: 1;
+  z-index: 10;
   min-width: fit-content;
   text-align: center;
 }
 
+.animatedText {
+  animation: fadeIn 4s ease;
+  color: white;
+  z-index: 10;
+}
+
 .title {
-  font-size: 4rem; 
+  font-size: 4rem;
 }
 
 .logo {
@@ -79,7 +83,7 @@
 
 .arrows path {
   scroll-behavior: smooth;
-  stroke: #000000;
+  stroke: white;
   fill: transparent;
   stroke-width: 0.3rem;
 
@@ -138,7 +142,7 @@
   background-color: #fff;
 }
 
-.contentText{
+.contentText {
   font-size: 2.5rem;
   margin-top: 12rem;
   margin-left: auto;
@@ -146,10 +150,9 @@
   text-align: center;
 }
 
-.spanText{
+.spanText {
   width: 50%;
 }
-
 
 .contentTitle {
   color: #a1a1a1;
@@ -244,7 +247,7 @@
 }
 
 .listContainerText {
-  overflow-y: scoll;
+  overflow: scroll;
   font-family: "Roboto", sans-serif;
   display: grid;
   gap: 5rem;
@@ -256,7 +259,7 @@
 }
 
 .listp {
-  color:#a1a1a1;
+  color: #a1a1a1;
   font-style: normal;
   width: 50%;
 }
@@ -265,6 +268,6 @@
   font-weight: 900;
 }
 
-.footer{
+.footer {
   flex-shrink: 0;
 }

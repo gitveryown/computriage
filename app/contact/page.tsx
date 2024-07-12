@@ -1,6 +1,6 @@
 "use client";
 
-
+import React, { useState } from 'react';
 import {
   Container,
   Flex,
@@ -28,10 +28,38 @@ import {
   MdOutlineEmail,
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
+import Link from 'next/link';
+import "./contact.css"
 
 export default function Page() {
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendMessage = () => {
+    window.location.href = `mailto:contactus@computriage.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Email: ${email}\n\nMessage: ${message}`
+    )}`;
+  };
+
   return (
     <div>
+      <header className="header">
+          <nav className="nav">
+            <div className="logo"></div>
+            <div className="nav-links">
+              <button className="notSelected">
+                <Link href="/"> Home </Link>
+              </button>
+              <button className="notSelected">
+                <Link href="/service"> Services </Link>
+              </button>
+              <button className="notSelected">
+                <Link href="/about"> About Us</Link>
+              </button>
+            </div>
+          </nav>
+          </header>
       <Container bg="" maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
           <Box
@@ -64,16 +92,16 @@ export default function Page() {
                           </Button>
                         </a>
                         <a href="mailto:contactus@computriage.com">
-                        <Button
-                          size="md"
-                          height="48px"
-                          variant="ghost"
-                          color="#DCE2FF"
-                          _hover={{ border: "2px solid #1C6FEB" }}
-                          leftIcon={<MdEmail color="#1970F1" size="20px" />}
-                        >
-                          contactus@computriage.com
-                        </Button>
+                          <Button
+                            size="md"
+                            height="48px"
+                            variant="ghost"
+                            color="#DCE2FF"
+                            _hover={{ border: "2px solid #1C6FEB" }}
+                            leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                          >
+                            contactus@computriage.com
+                          </Button>
                         </a>
                         <Button
                           size="md"
@@ -126,25 +154,35 @@ export default function Page() {
                   <Box bg="white" borderRadius="lg">
                     <Box m={8} color="#0B0E3F">
                       <VStack spacing={5}>
-                        <FormControl id="name">
-                          <FormLabel>Your Name</FormLabel>
+                        <FormControl id="subject">
+                          <FormLabel>Subject</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement pointerEvents="none">
                               <BsPerson color="gray.800" />
                             </InputLeftElement>
-                            <Input type="text" size="md" />
+                            <Input
+                              type="text"
+                              size="md"
+                              value={subject}
+                              onChange={(e) => setSubject(e.target.value)}
+                            />
                           </InputGroup>
                         </FormControl>
-                        <FormControl id="name">
-                          <FormLabel>Mail</FormLabel>
+                        <FormControl id="email">
+                          <FormLabel>Email</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement pointerEvents="none">
                               <MdOutlineEmail color="gray.800" />
                             </InputLeftElement>
-                            <Input type="text" size="md" />
+                            <Input
+                              type="email"
+                              size="md"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                            />
                           </InputGroup>
                         </FormControl>
-                        <FormControl id="name">
+                        <FormControl id="message">
                           <FormLabel>Message</FormLabel>
                           <Textarea
                             borderColor="gray.300"
@@ -152,14 +190,16 @@ export default function Page() {
                               borderRadius: "gray.300",
                             }}
                             placeholder="message"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                           />
                         </FormControl>
-                        <FormControl id="name" float="right">
+                        <FormControl id="sendMessage" float="right">
                           <Button
                             variant="solid"
                             bg="#0D74FF"
                             color="white"
-                            _hover={{}}
+                            onClick={handleSendMessage}
                           >
                             Send Message
                           </Button>

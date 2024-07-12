@@ -4,12 +4,29 @@ import Footer from "../component/Footer/footer";
 import Image from "next/image";
 import cyber from "../stockphoto1.png";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
+import Link from "next/link";
 
 
 
 export default function page() {
   return (
     <div className="main-container">
+      <header className="header">
+          <nav className="nav">
+            <div className="logo"></div>
+            <div className="nav-links">
+              <button className="notSelected">
+                <Link href="/"> Home </Link>
+              </button>
+              <button className="notSelected">
+                <Link href="/about">About Us</Link>
+              </button>
+              <button className="notSelected">
+                <Link href="/contact">Contact Us</Link>
+              </button>
+            </div>
+          </nav>
+          </header>
       <div className="main-section">
       
       <div className="main-grid">
@@ -55,7 +72,21 @@ export default function page() {
             <li>Federal and State Goverment IT Consulting</li>
           </ul>
         </div>
-            
+            <div className="right-info">
+              <div className="right-heading-pg2"> Our Speacialty </div>
+              <ul className="right-list">
+                <li> Microsoft</li>
+                <li> Red Hat Enterprise Linux</li>
+                <li> Linux </li>
+                <li> IBM AIX</li>
+                <li> Azure</li>
+                <li> Mac OS X</li>
+                <li> HP-UX</li>
+                <li> AWS </li>
+                <li> Security</li>
+              </ul>
+
+            </div>
         </div>
     </div>
   );

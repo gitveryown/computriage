@@ -25,18 +25,17 @@
 }
 
 .compvid {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   object-position: center;
-  z-index: 100;
 }
 
 .titleContainerText {
-  font-family: "Roboto mono", monospace;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 500;
   animation: fadeIn 12s ease;
   position: absolute;
@@ -44,7 +43,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
   z-index: 10;
   min-width: fit-content;
   text-align: center;
@@ -79,6 +78,7 @@
   margin-left: -30px;
   bottom: 20%;
   scroll-behavior: smooth;
+  cursor: pointer;
 }
 
 .arrows path {
@@ -140,6 +140,7 @@
   text-align: center;
   height: 120vh;
   background-color: #fff;
+  background: linear-gradient(to top, white, rgb(234, 234, 234), rgb(225, 224, 224), rgb(15, 14, 14) );
 }
 
 .contentText {
@@ -200,6 +201,7 @@
   padding: 0.5rem;
   cursor: pointer;
   border: none;
+  color: ;
 }
 
 .notSelected::after {

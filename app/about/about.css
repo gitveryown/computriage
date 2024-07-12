@@ -1,0 +1,136 @@
+
+.main-section {
+display: grid;
+grid-template-columns: 120px 100px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px;
+grid-template-rows: 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px;
+height: 1440px;
+width: 1440px;
+}
+
+
+.header {
+  color: #86bbd8;
+  width: 100%;
+  padding: 10px;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+    background-color: rgba(var(--color-background-rgb), 0.4);
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20000002;
+    position: fixed;
+    -webkit-backdrop-filter: blur(35px);
+    backdrop-filter: blur(35px);
+    border-radius: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 64px;
+    overflow: hidden;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .notSelected {
+    font-weight: bolder;
+    font-size: larger;
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;
+    color:#86bbd8;
+  }
+  
+  .notSelected::after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width 0.5s ease, background-color 0.5s ease;
+  }
+  
+  .notSelected:hover::after {
+    width: 100%;
+    background: #86bbd8;
+  }
+
+  .photo-grid {
+    grid-row-start: 2;
+    grid-row-end: 8;
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+  }
+
+  .text-container {
+    grid-row-start: 6;
+    grid-row-end: 12;
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+
+  .oh-heading {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xxx-large;
+    margin-bottom: 30px;
+
+  }
+
+  .para-history {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule-style: solid;
+  }
+
+  .ato-heading {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xxx-large;
+    margin-bottom: 30px;
+  }
+   
+  .para-owner {
+    column-count: 2;
+    column-gap: 40px;
+    column-rule-style: solid;
+  }
+
+.our-history {
+grid-row-start: 6;
+grid-row-end: 9;
+grid-column-start: 3;
+grid-column-end: 10;
+margin-bottom: 100px;
+}
+
+  
+.about-the-owner {
+    grid-row-start: 9;
+    grid-row-end: 12;
+    grid-column-start: 6;
+    grid-column-end: 10;
+}
+
+.p {
+font-family: 'Times New Roman', Times, serif;
+font-size: x-large;
+text-align: center;
+}

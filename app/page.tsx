@@ -22,7 +22,7 @@ export default function Home() {
         scrub: 0.7,
         start: "top center",
         end: "bottom center",
-        markers: true,
+        markers: false,
       },
     })
     .from('.spanText', {
